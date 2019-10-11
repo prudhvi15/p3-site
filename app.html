@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Prudhvi</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io (1)/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io (1)/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io (1)/favicon-16x16.png">
+  <link rel="manifest" href="favicon_io (1)/site.webmanifest">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+  <style>
+    a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 1em 1em;
+      text-decoration: none;
+    }
+
+    a:hover:not(.active) {
+      background-color: white;
+    }
+
+    .active {
+      background-color: lightgray;
+    }
+
+    h1 {
+      color: white;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-light bg-light static-top">
+    <div class="topnav">
+      <a href="#">My Site</a>
+      <div class="topnav-right">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a class="active" href="#">App</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 mx-auto">
+          <h1 class="md-5">Venkat Prudhvi Dommaraju</h1>
+        </div>
+      </div>
+    </div>
+    <main class="container mt-5 flex-fill">
+
+      <!--Container has rows - first row -->
+      <div class="row">
+
+        <!--Rows have columns - column 1 (7/12) -->
+        <div class="col-md-7 mb-4">
+
+          <h2>String Comparer</h2>
+          <hr>
+
+
+          <fieldset class="mt-4">
+            <label for="firstString">Enter first String:</label>
+            <input id="str1" type="String">
+
+          </fieldset>
+
+          <fieldset class="mt-4">
+            <label for="secondString">Enter second String:</label>
+            <input id="str2" type="String">
+
+          </fieldset>
+
+
+
+        </div>
+        <!--end column 1-->
+
+        <!--column 2 (5/12) -->
+        <div class="col-md-5 mb-4">
+          <h2>Click the Buttons</h2>
+          <hr>
+          <button id="addButton" class="btn btn-primary" style="border-radius:1em">Calculate</button>
+          <h4><strong>
+              <p id="result"></p>
+            </strong></h4>
+          <br>
+          <p><button class="btn btn-primary" style="border-radius:1em" onclick="clickCounter()" type="button">Click
+              me!</button></p>
+          <h4><strong>
+              <p id="count"></p>
+            </strong></h4>
+          <hr>
+          <button class="btn btn-primary" style="border-radius:1em" onclick="window.localStorage.clear()">Clear
+            Storage</button>
+        </div>
+      </div>
+      <article>
+        <div class="row">
+          <section class="col-sm-3">
+
+          </section>
+          <section class="col-sm-6 text-center">
+            <div id="demo">
+              <h2>Click this button to call AJAX</h2>
+              <button type="button" onclick="loadDoc()">Call AJAX</button>
+            </div>
+          </section>
+          <section class="col-sm-3">
+
+          </section>
+        </div>
+      </article>
+
+
+    </main>
+  </header>
+
+
+
+  <script>
+    function loadDoc() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("demo").innerHTML =
+            this.responseText;
+        }
+      };
+      xhttp.open("GET", "ajax.txt", true);
+      xhttp.send();
+    }
+  </script>
+
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="index.html">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="contact.html">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="app.html">App</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; My Website 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="https://www.facebook.com/?ref=tn_tnmn">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="https://www.linkedin.com/in/venkat-prudhvi-dommaraju-608a87143/">
+                <i class="fab fa-linkedin fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/prudhvi15">
+                <i class="fab fa-github fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

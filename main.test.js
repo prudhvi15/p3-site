@@ -1,16 +1,21 @@
 QUnit.module('MAIN MODULE', {})  // group all these tests together
 
-QUnit.test('TEST max', assert => {
-  assert.equal(max(prudhvi, venkat), 7, 'String')
-  assert.equal(max(northwest, maryville), 9, 'String')
-  assert.equal(max(webapps, java), 7, 'String')
+QUnit.test('TEST largest', assert => {
+  assert.equal(largest('prudhvi', 'venkat'), 7, 'String')
+  assert.equal(largest('northwest', 'maryville'), 9, 'String')
+  assert.equal(largest('webapps', 'java'), 7, 'String')
+  assert.equal(largest('database', 'html'), 8, 'String')
+  assert.equal(largest('', ''), 5, 'String')
+
 })
 
-function max(str1,str2){
-    return Math.max(str1.length,str2.length) 
-}
+
 
 QUnit.config.autostart = false  // sync = false; start after loading html
+
+function largest(str1,str2){
+    return Math.max(str1.length,str2.length) 
+}
 
 window.addEventListener('load', () => {
   const appURL = '../index.html'
@@ -35,14 +40,4 @@ window.addEventListener('load', () => {
     })
 })
 
-QUnit.test("TEST first number validation", assert => {
-  const input = document.querySelector('#str1')
-  const input = document.querySelector('#str2')
-  input.value = -3;
-  assert.equal(input.value, -3, "Bad value assigned")
-  assert.strictEqual(input.checkValidity(), false, "Correctly fails validation")
-  input.focus()
-  input.blur()
-  assert.strictEqual(warning.innerHTML, 'Invalid input', `Correctly adds warning ${warning}`)
-})
 
